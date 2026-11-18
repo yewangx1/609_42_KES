@@ -16,7 +16,13 @@ Route::get('/hello', function () {
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/user/{id}', [UserController::class, 'show']);
 
-Route::get('/accounts', [AccountController::class, 'index']);
-Route::get('/account/{id}', [AccountController::class, 'show']);
-
 Route::get('/card/{id}', [CardController::class, 'show']);
+
+Route::get('/accounts', [AccountController::class, 'index']);
+Route::get('/account/create', [AccountController::class, 'create']);
+Route::post('/account', [AccountController::class, 'store']);
+Route::get('/account/edit/{id}', [AccountController::class, 'edit']);
+Route::post('/account/update/{id}', [AccountController::class, 'update']);
+Route::get('/account/destroy/{id}', [AccountController::class, 'destroy']);
+
+Route::get('/account/{id}', [AccountController::class, 'show']);

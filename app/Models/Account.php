@@ -28,4 +28,6 @@ class Account extends Model
     {
         return $this->belongsToMany(Card::class, 'account_card');
     }
+
+    protected $fillable = ['user_id', 'currency'];
 }
